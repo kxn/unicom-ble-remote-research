@@ -28,6 +28,7 @@
 
 ## 资料导航
 
+- [讯飞 / Realtek 编码与报文资料补充（2026-09-16）](docs/iflytek-realtek-sources.md)
 - [详细语音进展、失败候选、广电文档对照](docs/unicom-voice-investigation.md)
 - [下一步实验顺序](docs/next-experiments.md)
 - [29 键映射](docs/unicom-keymap.md) / [机器可读键表](docs/unicom-keymap.json)
