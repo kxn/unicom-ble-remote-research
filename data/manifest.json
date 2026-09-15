@@ -1,0 +1,75 @@
+{
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "data/raw/keymap-session.jsonl",
+      "bytes": 20320,
+      "sha256": "26f128db8641463beb1cb875f993c17ea2b3e50eab1c03e8cea2df7a09f96acf"
+    },
+    {
+      "path": "data/raw/remote-session.jsonl",
+      "bytes": 18393,
+      "sha256": "ec80a190e5f91869b414e1508d419f142fabf8bb3c52250e05527ec7c14220fe"
+    },
+    {
+      "path": "data/raw/voice-1789484579.jsonl",
+      "bytes": 6746,
+      "sha256": "4c2faa598fa865fabb304e680842fa8da1beb4fc2245876c11c659978bdab8f7"
+    },
+    {
+      "path": "data/raw/voice-1789484721.jsonl",
+      "bytes": 179554,
+      "sha256": "a56a2813b36a5d0f39b0666bfa2b48f4bf42210ec5c778da2ee88291c6ccfeea"
+    },
+    {
+      "path": "data/derived/fb_repeat_silence_speech.att20.bin",
+      "bytes": 14340,
+      "sha256": "2569e4737e54126521a5a57bcdd97777dbb39ebeb151e1d27f4a49756ef32523"
+    },
+    {
+      "path": "data/derived/fb_repeat_silence_speech.content48.bin",
+      "bytes": 11472,
+      "sha256": "7aabaf64efc69ebc3fbb3c7ac507497980f68b5bd1ed74438c92d6dea31cef08"
+    },
+    {
+      "path": "data/derived/fb_repeat_silence_speech.packets.csv",
+      "bytes": 61017,
+      "sha256": "3ad30556ac64a1da3485f0d6af8e605399cfeeaefc13de85483e75155a96225b"
+    },
+    {
+      "path": "data/derived/fb_single_01_00.att20.bin",
+      "bytes": 9420,
+      "sha256": "88fe027b755ba0233c1f6b84f360cbb0b97e6890e0f2e6a137b608b1dc719e22"
+    },
+    {
+      "path": "data/derived/fb_single_01_00.content48.bin",
+      "bytes": 7536,
+      "sha256": "7b9102b0098bcaf9e54f8d161dc9e40454ed78ba73a5c57fa4731541b95e2a20"
+    },
+    {
+      "path": "data/derived/fb_single_01_00.packets.csv",
+      "bytes": 39553,
+      "sha256": "31ba2fd4d8be244c44cc6a5389613f144717e6199fe2081cb9e7502572668f66"
+    },
+    {
+      "path": "data/derived/groups.jsonl",
+      "bytes": 187889,
+      "sha256": "67c7a6c5dee0ee2a57b23a627f795765b564bf450e9ade84d505d1cc2e9963f5"
+    },
+    {
+      "path": "data/derived/summary.json",
+      "bytes": 468,
+      "sha256": "c346ee82f8b9c7c89d0b3b902d12ef46224ad978ace7227f256d26ebd179dd02"
+    },
+    {
+      "path": "docs/unicom-keymap-evidence.jsonl",
+      "bytes": 9931,
+      "sha256": "71b95acd8af74911992f41576f5ddb720c754d13f64c25a2fef9ace2f17ac0f8"
+    },
+    {
+      "path": "docs/unicom-voice-evidence.jsonl",
+      "bytes": 175894,
+      "sha256": "5416067b30cc68a05ee5d01054b53c4146e142144067547483a7d876845e7a47"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+bumble==0.0.234
+libusb-package==1.0.26.4

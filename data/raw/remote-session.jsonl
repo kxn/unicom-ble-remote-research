@@ -1,0 +1,166 @@
+{"time": 1789483344.8804178, "kind": "connected"}
+{"time": 1789483345.4945538, "kind": "paired", "encryption": 1}
+{"time": 1789483345.8155124, "kind": "service", "handle": 1, "uuid": "UUID-16:1800 (Generic Access)"}
+{"time": 1789483345.972678, "kind": "characteristic", "handle": 3, "uuid": "UUID-16:2A00 (Device Name)", "properties": 2}
+{"time": 1789483346.0854597, "kind": "read", "handle": 3, "value": "e88194e9809a424c45e8afade99fb3e981a5e68ea7e599a8"}
+{"time": 1789483346.0855663, "kind": "characteristic", "handle": 5, "uuid": "UUID-16:2A01 (Appearance)", "properties": 2}
+{"time": 1789483346.1453984, "kind": "read", "handle": 5, "value": "c003"}
+{"time": 1789483346.1454792, "kind": "service", "handle": 12, "uuid": "UUID-16:1801 (Generic Attribute)"}
+{"time": 1789483346.2664385, "kind": "characteristic", "handle": 14, "uuid": "UUID-16:2A05 (Service Changed)", "properties": 32}
+{"time": 1789483346.3854444, "kind": "descriptor", "handle": 15, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483346.3855228, "kind": "service", "handle": 16, "uuid": "UUID-16:180A (Device Information)"}
+{"time": 1789483346.5654774, "kind": "characteristic", "handle": 18, "uuid": "UUID-16:2A25 (Serial Number String)", "properties": 2}
+{"time": 1789483346.6256123, "kind": "read", "handle": 18, "value": "30363133313131343130323132343435"}
+{"time": 1789483346.625696, "kind": "characteristic", "handle": 20, "uuid": "UUID-16:2A26 (Firmware Revision String)", "properties": 2}
+{"time": 1789483346.745472, "kind": "read", "handle": 20, "value": "424c45352e30000000000000000000000000000000000000"}
+{"time": 1789483346.7455614, "kind": "characteristic", "handle": 22, "uuid": "UUID-16:2A27 (Hardware Revision String)", "properties": 2}
+{"time": 1789483346.8054912, "kind": "read", "handle": 22, "value": "56312e32"}
+{"time": 1789483346.8055599, "kind": "characteristic", "handle": 24, "uuid": "UUID-16:2A28 (Software Revision String)", "properties": 2}
+{"time": 1789483346.925504, "kind": "read", "handle": 24, "value": "584652534430445f555f5230315f3834365f343030393100000000000000"}
+{"time": 1789483346.925573, "kind": "characteristic", "handle": 26, "uuid": "UUID-16:2A50 (PnP ID)", "properties": 2}
+{"time": 1789483346.9854949, "kind": "read", "handle": 26, "value": "01160400031001"}
+{"time": 1789483346.9855778, "kind": "characteristic", "handle": 28, "uuid": "UUID-16:2A23 (System ID)", "properties": 2}
+{"time": 1789483347.045445, "kind": "read", "handle": 28, "value": ""}
+{"time": 1789483347.0455098, "kind": "service", "handle": 29, "uuid": "UUID-16:180F (Battery)"}
+{"time": 1789483347.1655943, "kind": "characteristic", "handle": 31, "uuid": "UUID-16:2A19 (Battery Level)", "properties": 26}
+{"time": 1789483347.2855186, "kind": "descriptor", "handle": 32, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483347.3454592, "kind": "read", "handle": 31, "value": "64"}
+{"time": 1789483347.4954584, "kind": "subscribed", "handle": 31}
+{"time": 1789483347.495534, "kind": "service", "handle": 33, "uuid": "UUID-16:1812 (Human Interface Device)"}
+{"time": 1789483347.7955694, "kind": "characteristic", "handle": 36, "uuid": "UUID-16:2A4A (HID Information)", "properties": 2}
+{"time": 1789483347.8555136, "kind": "read", "handle": 36, "value": "11010001"}
+{"time": 1789483347.8555782, "kind": "characteristic", "handle": 38, "uuid": "UUID-16:2A4C (HID Control Point)", "properties": 4}
+{"time": 1789483347.8555996, "kind": "characteristic", "handle": 40, "uuid": "UUID-16:2A4E (Protocol Mode)", "properties": 6}
+{"time": 1789483347.975528, "kind": "read", "handle": 40, "value": "01"}
+{"time": 1789483347.975578, "kind": "characteristic", "handle": 42, "uuid": "UUID-16:2A4B (Report Map)", "properties": 2}
+{"time": 1789483348.4556599, "kind": "read", "handle": 42, "value": "05010906a1018501050719e029e71500250175019508810295017508810195057501050819012905910295017503910195067508150025ff0507190029ff8100c0050c0901a101850319002aff03150026ff03950175108100c0050c0901a101850495147508150025ff8100c0050c0901a10185fc95147508150026ff008100c0050c0901a10185f895147508150026ff008100c0050c0901a10185f995017508150026ff008100c0"}
+{"time": 1789483348.4557767, "kind": "characteristic", "handle": 44, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483348.5755177, "kind": "descriptor", "handle": 45, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483348.635517, "kind": "descriptor", "handle": 46, "uuid": "UUID-16:2908 (Report Reference)", "value": "0101"}
+{"time": 1789483348.695621, "kind": "read", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483348.82211, "kind": "subscribed", "handle": 44}
+{"time": 1789483348.822179, "kind": "characteristic", "handle": 48, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483348.935564, "kind": "descriptor", "handle": 49, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483348.9955473, "kind": "descriptor", "handle": 50, "uuid": "UUID-16:2908 (Report Reference)", "value": "0301"}
+{"time": 1789483349.0555935, "kind": "read", "handle": 48, "value": "0000000000000000"}
+{"time": 1789483349.1755838, "kind": "subscribed", "handle": 48}
+{"time": 1789483349.1756692, "kind": "characteristic", "handle": 52, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483349.3022065, "kind": "descriptor", "handle": 53, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483349.355565, "kind": "descriptor", "handle": 54, "uuid": "UUID-16:2908 (Report Reference)", "value": "fc01"}
+{"time": 1789483349.4156346, "kind": "read", "handle": 52, "value": "fc01000000000000"}
+{"time": 1789483349.535584, "kind": "subscribed", "handle": 52}
+{"time": 1789483349.5356345, "kind": "characteristic", "handle": 56, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483349.6556041, "kind": "descriptor", "handle": 57, "uuid": "UUID-16:2908 (Report Reference)", "value": "fb02"}
+{"time": 1789483349.7156162, "kind": "read", "handle": 56, "value": ""}
+{"time": 1789483349.7156706, "kind": "characteristic", "handle": 59, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483349.8356113, "kind": "descriptor", "handle": 60, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483349.8955958, "kind": "descriptor", "handle": 61, "uuid": "UUID-16:2908 (Report Reference)", "value": "f801"}
+{"time": 1789483349.9556901, "kind": "read", "handle": 59, "value": "f801000000000000"}
+{"time": 1789483350.0755808, "kind": "subscribed", "handle": 59}
+{"time": 1789483350.0756423, "kind": "characteristic", "handle": 63, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483350.1962054, "kind": "descriptor", "handle": 64, "uuid": "UUID-16:2908 (Report Reference)", "value": "fa02"}
+{"time": 1789483350.2556021, "kind": "read", "handle": 63, "value": ""}
+{"time": 1789483350.2556942, "kind": "characteristic", "handle": 66, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483350.3756764, "kind": "descriptor", "handle": 67, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483350.4156132, "kind": "descriptor", "handle": 68, "uuid": "UUID-16:2908 (Report Reference)", "value": "f901"}
+{"time": 1789483350.4356601, "kind": "read", "handle": 66, "value": "f901000800080063"}
+{"time": 1789483350.47557, "kind": "subscribed", "handle": 66}
+{"time": 1789483350.4756496, "kind": "characteristic", "handle": 70, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483350.5155985, "kind": "descriptor", "handle": 71, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483350.5356421, "kind": "descriptor", "handle": 72, "uuid": "UUID-16:2908 (Report Reference)", "value": "0401"}
+{"time": 1789483350.5557022, "kind": "read", "handle": 70, "value": "0401000800080063"}
+{"time": 1789483350.5955892, "kind": "subscribed", "handle": 70}
+{"time": 1789483350.5956619, "kind": "service", "handle": 73, "uuid": "UUID-16:FD00"}
+{"time": 1789483350.6356783, "kind": "characteristic", "handle": 75, "uuid": "UUID-16:FD01", "properties": 8}
+{"time": 1789483350.6357539, "kind": "characteristic", "handle": 77, "uuid": "UUID-16:FD02", "properties": 20}
+{"time": 1789483350.6756341, "kind": "descriptor", "handle": 78, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483362.3528068, "kind": "connected"}
+{"time": 1789483372.6652744, "kind": "connected"}
+{"time": 1789483373.3038483, "kind": "paired", "encryption": 1}
+{"time": 1789483373.631653, "kind": "service", "handle": 1, "uuid": "UUID-16:1800 (Generic Access)"}
+{"time": 1789483373.7516654, "kind": "characteristic", "handle": 3, "uuid": "UUID-16:2A00 (Device Name)", "properties": 2}
+{"time": 1789483373.8782108, "kind": "read", "handle": 3, "value": "e88194e9809a424c45e8afade99fb3e981a5e68ea7e599a8"}
+{"time": 1789483373.878261, "kind": "characteristic", "handle": 5, "uuid": "UUID-16:2A01 (Appearance)", "properties": 2}
+{"time": 1789483373.9315898, "kind": "read", "handle": 5, "value": "c003"}
+{"time": 1789483373.93166, "kind": "service", "handle": 12, "uuid": "UUID-16:1801 (Generic Attribute)"}
+{"time": 1789483374.0516403, "kind": "characteristic", "handle": 14, "uuid": "UUID-16:2A05 (Service Changed)", "properties": 32}
+{"time": 1789483374.1782107, "kind": "descriptor", "handle": 15, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483374.1782992, "kind": "service", "handle": 16, "uuid": "UUID-16:180A (Device Information)"}
+{"time": 1789483374.3516638, "kind": "characteristic", "handle": 18, "uuid": "UUID-16:2A25 (Serial Number String)", "properties": 2}
+{"time": 1789483374.411767, "kind": "read", "handle": 18, "value": "30363133313131343130323132343435"}
+{"time": 1789483374.4118178, "kind": "characteristic", "handle": 20, "uuid": "UUID-16:2A26 (Firmware Revision String)", "properties": 2}
+{"time": 1789483374.53161, "kind": "read", "handle": 20, "value": "424c45352e30000000000000000000000000000000000000"}
+{"time": 1789483374.5316577, "kind": "characteristic", "handle": 22, "uuid": "UUID-16:2A27 (Hardware Revision String)", "properties": 2}
+{"time": 1789483374.5916133, "kind": "read", "handle": 22, "value": "56312e32"}
+{"time": 1789483374.5916939, "kind": "characteristic", "handle": 24, "uuid": "UUID-16:2A28 (Software Revision String)", "properties": 2}
+{"time": 1789483374.7117326, "kind": "read", "handle": 24, "value": "584652534430445f555f5230315f3834365f343030393100000000000000"}
+{"time": 1789483374.711818, "kind": "characteristic", "handle": 26, "uuid": "UUID-16:2A50 (PnP ID)", "properties": 2}
+{"time": 1789483374.7716742, "kind": "read", "handle": 26, "value": "01160400031001"}
+{"time": 1789483374.7717638, "kind": "characteristic", "handle": 28, "uuid": "UUID-16:2A23 (System ID)", "properties": 2}
+{"time": 1789483374.8315961, "kind": "read", "handle": 28, "value": ""}
+{"time": 1789483374.8316953, "kind": "service", "handle": 29, "uuid": "UUID-16:180F (Battery)"}
+{"time": 1789483374.9516642, "kind": "characteristic", "handle": 31, "uuid": "UUID-16:2A19 (Battery Level)", "properties": 26}
+{"time": 1789483375.0717206, "kind": "descriptor", "handle": 32, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483375.1316485, "kind": "read", "handle": 31, "value": "64"}
+{"time": 1789483375.2516193, "kind": "subscribed", "handle": 31}
+{"time": 1789483375.2517009, "kind": "service", "handle": 33, "uuid": "UUID-16:1812 (Human Interface Device)"}
+{"time": 1789483375.551737, "kind": "characteristic", "handle": 36, "uuid": "UUID-16:2A4A (HID Information)", "properties": 2}
+{"time": 1789483375.6116886, "kind": "read", "handle": 36, "value": "11010001"}
+{"time": 1789483375.6117697, "kind": "characteristic", "handle": 38, "uuid": "UUID-16:2A4C (HID Control Point)", "properties": 4}
+{"time": 1789483375.611815, "kind": "characteristic", "handle": 40, "uuid": "UUID-16:2A4E (Protocol Mode)", "properties": 6}
+{"time": 1789483375.6716757, "kind": "read", "handle": 40, "value": "01"}
+{"time": 1789483375.6717522, "kind": "characteristic", "handle": 42, "uuid": "UUID-16:2A4B (Report Map)", "properties": 2}
+{"time": 1789483376.1518106, "kind": "read", "handle": 42, "value": "05010906a1018501050719e029e71500250175019508810295017508810195057501050819012905910295017503910195067508150025ff0507190029ff8100c0050c0901a101850319002aff03150026ff03950175108100c0050c0901a101850495147508150025ff8100c0050c0901a10185fc95147508150026ff008100c0050c0901a10185f895147508150026ff008100c0050c0901a10185f995017508150026ff008100c0"}
+{"time": 1789483376.1519058, "kind": "characteristic", "handle": 44, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483376.2716722, "kind": "descriptor", "handle": 45, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483376.3317547, "kind": "descriptor", "handle": 46, "uuid": "UUID-16:2908 (Report Reference)", "value": "0101"}
+{"time": 1789483376.3918252, "kind": "read", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483376.5117095, "kind": "subscribed", "handle": 44}
+{"time": 1789483376.5118012, "kind": "characteristic", "handle": 48, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483376.6316667, "kind": "descriptor", "handle": 49, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483376.6983693, "kind": "descriptor", "handle": 50, "uuid": "UUID-16:2908 (Report Reference)", "value": "0301"}
+{"time": 1789483376.7517452, "kind": "read", "handle": 48, "value": "0000000000000000"}
+{"time": 1789483376.8716726, "kind": "subscribed", "handle": 48}
+{"time": 1789483376.8717475, "kind": "characteristic", "handle": 52, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483376.9917114, "kind": "descriptor", "handle": 53, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483377.0584006, "kind": "descriptor", "handle": 54, "uuid": "UUID-16:2908 (Report Reference)", "value": "fc01"}
+{"time": 1789483377.1118093, "kind": "read", "handle": 52, "value": "fc01000000000000"}
+{"time": 1789483377.2316751, "kind": "subscribed", "handle": 52}
+{"time": 1789483377.2317462, "kind": "characteristic", "handle": 56, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483377.3517146, "kind": "descriptor", "handle": 57, "uuid": "UUID-16:2908 (Report Reference)", "value": "fb02"}
+{"time": 1789483377.4117236, "kind": "read", "handle": 56, "value": ""}
+{"time": 1789483377.4118009, "kind": "characteristic", "handle": 59, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483377.5317538, "kind": "descriptor", "handle": 60, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483377.591713, "kind": "descriptor", "handle": 61, "uuid": "UUID-16:2908 (Report Reference)", "value": "f801"}
+{"time": 1789483377.6518068, "kind": "read", "handle": 59, "value": "f801000000000000"}
+{"time": 1789483377.7717001, "kind": "subscribed", "handle": 59}
+{"time": 1789483377.7717793, "kind": "characteristic", "handle": 63, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483377.8917766, "kind": "descriptor", "handle": 64, "uuid": "UUID-16:2908 (Report Reference)", "value": "fa02"}
+{"time": 1789483377.9525, "kind": "read", "handle": 63, "value": ""}
+{"time": 1789483377.9525442, "kind": "characteristic", "handle": 66, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483378.0717375, "kind": "descriptor", "handle": 67, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483378.1317556, "kind": "descriptor", "handle": 68, "uuid": "UUID-16:2908 (Report Reference)", "value": "f901"}
+{"time": 1789483378.1717882, "kind": "read", "handle": 66, "value": "f901000000000000"}
+{"time": 1789483378.2117026, "kind": "subscribed", "handle": 66}
+{"time": 1789483378.211745, "kind": "characteristic", "handle": 70, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483378.2517588, "kind": "descriptor", "handle": 71, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0100"}
+{"time": 1789483378.2717292, "kind": "descriptor", "handle": 72, "uuid": "UUID-16:2908 (Report Reference)", "value": "0401"}
+{"time": 1789483378.2918167, "kind": "read", "handle": 70, "value": "0401000000000000"}
+{"time": 1789483378.331722, "kind": "subscribed", "handle": 70}
+{"time": 1789483378.331788, "kind": "service", "handle": 73, "uuid": "UUID-16:FD00"}
+{"time": 1789483378.3718064, "kind": "characteristic", "handle": 75, "uuid": "UUID-16:FD01", "properties": 8}
+{"time": 1789483378.371867, "kind": "characteristic", "handle": 77, "uuid": "UUID-16:FD02", "properties": 20}
+{"time": 1789483378.4117696, "kind": "descriptor", "handle": 78, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483378.4118345, "kind": "listening", "seconds": 90}
+{"time": 1789483392.5826302, "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483392.7725658, "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483393.2426288, "kind": "notify", "handle": 44, "value": "0000510000000000"}
+{"time": 1789483393.4626262, "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483394.0426483, "kind": "notify", "handle": 44, "value": "0000280000000000"}
+{"time": 1789483394.2226331, "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483396.0028603, "kind": "notify", "handle": 59, "value": "8203010000000000000000000000000000000000"}
+{"time": 1789483396.1026716, "kind": "notify", "handle": 44, "value": "0000ea0000000000"}
+{"time": 1789483397.9829352, "kind": "notify", "handle": 59, "value": "8203000000000000000000000000000000000000"}
+{"time": 1789483398.102704, "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483468.8074257, "kind": "disconnected", "reason": 22}
+{"time": 1789483468.8076954, "kind": "done"}

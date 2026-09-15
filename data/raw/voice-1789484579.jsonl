@@ -1,0 +1,53 @@
+{"time": 1789484579.6460795, "monotonic": 46480.4780063, "kind": "connecting", "log": "voice-1789484579.jsonl"}
+{"time": 1789484615.362261, "monotonic": 46516.1941878, "kind": "connected"}
+{"time": 1789484616.007861, "monotonic": 46516.8397877, "kind": "paired", "encryption": 1}
+{"time": 1789484616.4557142, "monotonic": 46517.2876411, "kind": "characteristic", "handle": 3, "uuid": "UUID-16:2A00 (Device Name)", "properties": 2}
+{"time": 1789484616.4558167, "monotonic": 46517.2877435, "kind": "characteristic", "handle": 5, "uuid": "UUID-16:2A01 (Appearance)", "properties": 2}
+{"time": 1789484616.5757194, "monotonic": 46517.4076462, "kind": "characteristic", "handle": 14, "uuid": "UUID-16:2A05 (Service Changed)", "properties": 32}
+{"time": 1789484616.7557864, "monotonic": 46517.5877132, "kind": "characteristic", "handle": 18, "uuid": "UUID-16:2A25 (Serial Number String)", "properties": 2}
+{"time": 1789484616.755876, "monotonic": 46517.5878029, "kind": "characteristic", "handle": 20, "uuid": "UUID-16:2A26 (Firmware Revision String)", "properties": 2}
+{"time": 1789484616.7558975, "monotonic": 46517.5878244, "kind": "characteristic", "handle": 22, "uuid": "UUID-16:2A27 (Hardware Revision String)", "properties": 2}
+{"time": 1789484616.755913, "monotonic": 46517.5878398, "kind": "characteristic", "handle": 24, "uuid": "UUID-16:2A28 (Software Revision String)", "properties": 2}
+{"time": 1789484616.7559268, "monotonic": 46517.5878537, "kind": "characteristic", "handle": 26, "uuid": "UUID-16:2A50 (PnP ID)", "properties": 2}
+{"time": 1789484616.7559414, "monotonic": 46517.5878681, "kind": "characteristic", "handle": 28, "uuid": "UUID-16:2A23 (System ID)", "properties": 2}
+{"time": 1789484616.8757823, "monotonic": 46517.707709, "kind": "characteristic", "handle": 31, "uuid": "UUID-16:2A19 (Battery Level)", "properties": 26}
+{"time": 1789484616.875866, "monotonic": 46517.7077929, "kind": "subscribe_start", "handle": 31}
+{"time": 1789484616.9956636, "monotonic": 46517.8275905, "kind": "subscribed", "handle": 31}
+{"time": 1789484617.2957637, "monotonic": 46518.1276905, "kind": "characteristic", "handle": 36, "uuid": "UUID-16:2A4A (HID Information)", "properties": 2}
+{"time": 1789484617.2958195, "monotonic": 46518.1277461, "kind": "characteristic", "handle": 38, "uuid": "UUID-16:2A4C (HID Control Point)", "properties": 4}
+{"time": 1789484617.2958765, "monotonic": 46518.1278034, "kind": "characteristic", "handle": 40, "uuid": "UUID-16:2A4E (Protocol Mode)", "properties": 6}
+{"time": 1789484617.295904, "monotonic": 46518.1278308, "kind": "characteristic", "handle": 42, "uuid": "UUID-16:2A4B (Report Map)", "properties": 2}
+{"time": 1789484617.2959208, "monotonic": 46518.1278476, "kind": "characteristic", "handle": 44, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.295934, "monotonic": 46518.1278608, "kind": "subscribe_start", "handle": 44}
+{"time": 1789484617.4157302, "monotonic": 46518.2476571, "kind": "subscribed", "handle": 44}
+{"time": 1789484617.4158106, "monotonic": 46518.2477375, "kind": "characteristic", "handle": 48, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.4158318, "monotonic": 46518.2477586, "kind": "subscribe_start", "handle": 48}
+{"time": 1789484617.5356717, "monotonic": 46518.3675986, "kind": "subscribed", "handle": 48}
+{"time": 1789484617.535718, "monotonic": 46518.3676446, "kind": "characteristic", "handle": 52, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.5357614, "monotonic": 46518.3676883, "kind": "subscribe_start", "handle": 52}
+{"time": 1789484617.6557128, "monotonic": 46518.4876395, "kind": "subscribed", "handle": 52}
+{"time": 1789484617.6557865, "monotonic": 46518.4877132, "kind": "characteristic", "handle": 56, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789484617.655809, "monotonic": 46518.4877357, "kind": "characteristic", "handle": 59, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.6558247, "monotonic": 46518.4877515, "kind": "subscribe_start", "handle": 59}
+{"time": 1789484617.7757206, "monotonic": 46518.6076476, "kind": "subscribed", "handle": 59}
+{"time": 1789484617.7758021, "monotonic": 46518.607729, "kind": "characteristic", "handle": 63, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789484617.7758222, "monotonic": 46518.607749, "kind": "characteristic", "handle": 66, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.7758346, "monotonic": 46518.6077614, "kind": "subscribe_start", "handle": 66}
+{"time": 1789484617.8957164, "monotonic": 46518.7276431, "kind": "subscribed", "handle": 66}
+{"time": 1789484617.8957877, "monotonic": 46518.7277146, "kind": "characteristic", "handle": 70, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789484617.8958054, "monotonic": 46518.7277322, "kind": "subscribe_start", "handle": 70}
+{"time": 1789484618.075718, "monotonic": 46518.9076446, "kind": "subscribed", "handle": 70}
+{"time": 1789484618.195787, "monotonic": 46519.0277138, "kind": "characteristic", "handle": 75, "uuid": "UUID-16:FD01", "properties": 8}
+{"time": 1789484618.1958675, "monotonic": 46519.0277946, "kind": "characteristic", "handle": 77, "uuid": "UUID-16:FD02", "properties": 20}
+{"time": 1789484618.1958923, "monotonic": 46519.0278189, "kind": "subscribe_start", "handle": 77}
+{"time": 1789484618.3157513, "monotonic": 46519.1476782, "kind": "notify", "handle": 77, "value": "10014b2a030204000203"}
+{"time": 1789484618.3163953, "monotonic": 46519.148322, "kind": "subscribed", "handle": 77}
+{"time": 1789484618.3164418, "monotonic": 46519.1483687, "kind": "listening", "seconds": 600}
+{"time": 1789484643.1371665, "monotonic": 46543.9690933, "kind": "notify", "handle": 59, "value": "8203010000000000000000000000000000000000"}
+{"time": 1789484643.2368941, "monotonic": 46544.068821, "kind": "notify", "handle": 44, "value": "0000ea0000000000"}
+{"time": 1789484644.757179, "monotonic": 46545.5891059, "kind": "notify", "handle": 59, "value": "8203000000000000000000000000000000000000"}
+{"time": 1789484644.8770738, "monotonic": 46545.7090005, "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789484647.6473815, "monotonic": 46548.4793084, "kind": "notify", "handle": 59, "value": "8203010000000000000000000000000000000000"}
+{"time": 1789484647.737105, "monotonic": 46548.5690316, "kind": "notify", "handle": 44, "value": "0000ea0000000000"}
+{"time": 1789484650.2174382, "monotonic": 46551.049365, "kind": "notify", "handle": 59, "value": "8203000000000000000000000000000000000000"}
+{"time": 1789484650.3372498, "monotonic": 46551.1691767, "kind": "notify", "handle": 44, "value": "0000000000000000"}

@@ -1,0 +1,10 @@
+.venv/
+.local/
+__pycache__/
+*.pyc
+pairing-keys.json
+*-keys.json
+*.wav
+*.ogg
+*.exe
+*.dll

@@ -1,0 +1,7 @@
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+data/raw/** -text whitespace=cr-at-eol
+data/derived/** -text whitespace=cr-at-eol
+docs/*-evidence.jsonl -text whitespace=cr-at-eol
+*.bin binary

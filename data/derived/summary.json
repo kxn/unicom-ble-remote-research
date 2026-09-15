@@ -1,0 +1,16 @@
+{
+  "fc_packets": 1188,
+  "groups": 396,
+  "complete_groups": 396,
+  "incomplete_groups": 0,
+  "invalid_packets": [],
+  "sequence_discontinuities": 0,
+  "tail_data_matches": 396,
+  "tail_sequence_matches": 396,
+  "groups_by_experiment": {
+    "fb_single_01_00": 157,
+    "fb_repeat_silence_speech": 239
+  },
+  "warning": "Joined content includes unknown metadata; it is not a verified audio bitstream.",
+  "source": "data/raw/voice-1789484721.jsonl"
+}

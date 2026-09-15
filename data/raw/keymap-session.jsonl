@@ -1,0 +1,157 @@
+{"time": 1789483605.1186993, "stage": "setup", "kind": "connected"}
+{"time": 1789483605.2867312, "stage": "setup", "kind": "disconnected", "reason": 62}
+{"time": 1789483663.0093858, "stage": "setup", "kind": "connected"}
+{"time": 1789483663.6309125, "stage": "setup", "kind": "paired", "encryption": 1}
+{"time": 1789483663.9589126, "stage": "setup", "kind": "service", "handle": 1, "uuid": "UUID-16:1800 (Generic Access)"}
+{"time": 1789483664.0789015, "stage": "setup", "kind": "characteristic", "handle": 3, "uuid": "UUID-16:2A00 (Device Name)", "properties": 2}
+{"time": 1789483664.1990092, "stage": "setup", "kind": "read", "handle": 3, "value": "e88194e9809a424c45e8afade99fb3e981a5e68ea7e599a8"}
+{"time": 1789483664.1993523, "stage": "setup", "kind": "characteristic", "handle": 5, "uuid": "UUID-16:2A01 (Appearance)", "properties": 2}
+{"time": 1789483664.2588062, "stage": "setup", "kind": "read", "handle": 5, "value": "c003"}
+{"time": 1789483664.2589684, "stage": "setup", "kind": "service", "handle": 12, "uuid": "UUID-16:1801 (Generic Attribute)"}
+{"time": 1789483664.378894, "stage": "setup", "kind": "characteristic", "handle": 14, "uuid": "UUID-16:2A05 (Service Changed)", "properties": 32}
+{"time": 1789483664.4988647, "stage": "setup", "kind": "descriptor", "handle": 15, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483664.499039, "stage": "setup", "kind": "service", "handle": 16, "uuid": "UUID-16:180A (Device Information)"}
+{"time": 1789483664.6789215, "stage": "setup", "kind": "characteristic", "handle": 18, "uuid": "UUID-16:2A25 (Serial Number String)", "properties": 2}
+{"time": 1789483664.7390049, "stage": "setup", "kind": "read", "handle": 18, "value": "30363133313131343130323132343435"}
+{"time": 1789483664.739177, "stage": "setup", "kind": "characteristic", "handle": 20, "uuid": "UUID-16:2A26 (Firmware Revision String)", "properties": 2}
+{"time": 1789483664.8655384, "stage": "setup", "kind": "read", "handle": 20, "value": "424c45352e30000000000000000000000000000000000000"}
+{"time": 1789483664.8656988, "stage": "setup", "kind": "characteristic", "handle": 22, "uuid": "UUID-16:2A27 (Hardware Revision String)", "properties": 2}
+{"time": 1789483664.918863, "stage": "setup", "kind": "read", "handle": 22, "value": "56312e32"}
+{"time": 1789483664.9190326, "stage": "setup", "kind": "characteristic", "handle": 24, "uuid": "UUID-16:2A28 (Software Revision String)", "properties": 2}
+{"time": 1789483665.0389261, "stage": "setup", "kind": "read", "handle": 24, "value": "584652534430445f555f5230315f3834365f343030393100000000000000"}
+{"time": 1789483665.0390987, "stage": "setup", "kind": "characteristic", "handle": 26, "uuid": "UUID-16:2A50 (PnP ID)", "properties": 2}
+{"time": 1789483665.0989025, "stage": "setup", "kind": "read", "handle": 26, "value": "01160400031001"}
+{"time": 1789483665.0990515, "stage": "setup", "kind": "characteristic", "handle": 28, "uuid": "UUID-16:2A23 (System ID)", "properties": 2}
+{"time": 1789483665.1588187, "stage": "setup", "kind": "read", "handle": 28, "value": ""}
+{"time": 1789483665.1589673, "stage": "setup", "kind": "service", "handle": 29, "uuid": "UUID-16:180F (Battery)"}
+{"time": 1789483665.2793362, "stage": "setup", "kind": "characteristic", "handle": 31, "uuid": "UUID-16:2A19 (Battery Level)", "properties": 26}
+{"time": 1789483665.3988988, "stage": "setup", "kind": "descriptor", "handle": 32, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483665.458873, "stage": "setup", "kind": "read", "handle": 31, "value": "64"}
+{"time": 1789483665.5789242, "stage": "setup", "kind": "subscribed", "handle": 31}
+{"time": 1789483665.5791006, "stage": "setup", "kind": "service", "handle": 33, "uuid": "UUID-16:1812 (Human Interface Device)"}
+{"time": 1789483665.9989848, "stage": "setup", "kind": "characteristic", "handle": 36, "uuid": "UUID-16:2A4A (HID Information)", "properties": 2}
+{"time": 1789483666.0891747, "stage": "setup", "kind": "read", "handle": 36, "value": "11010001"}
+{"time": 1789483666.089369, "stage": "setup", "kind": "characteristic", "handle": 38, "uuid": "UUID-16:2A4C (HID Control Point)", "properties": 4}
+{"time": 1789483666.089569, "stage": "setup", "kind": "characteristic", "handle": 40, "uuid": "UUID-16:2A4E (Protocol Mode)", "properties": 6}
+{"time": 1789483666.149048, "stage": "setup", "kind": "read", "handle": 40, "value": "01"}
+{"time": 1789483666.1492345, "stage": "setup", "kind": "characteristic", "handle": 42, "uuid": "UUID-16:2A4B (Report Map)", "properties": 2}
+{"time": 1789483666.689162, "stage": "setup", "kind": "read", "handle": 42, "value": "05010906a1018501050719e029e71500250175019508810295017508810195057501050819012905910295017503910195067508150025ff0507190029ff8100c0050c0901a101850319002aff03150026ff03950175108100c0050c0901a101850495147508150025ff8100c0050c0901a10185fc95147508150026ff008100c0050c0901a10185f895147508150026ff008100c0050c0901a10185f995017508150026ff008100c0"}
+{"time": 1789483666.6893506, "stage": "setup", "kind": "characteristic", "handle": 44, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483666.8089795, "stage": "setup", "kind": "descriptor", "handle": 45, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483666.868972, "stage": "setup", "kind": "descriptor", "handle": 46, "uuid": "UUID-16:2908 (Report Reference)", "value": "0101"}
+{"time": 1789483666.928981, "stage": "setup", "kind": "read", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483667.0489113, "stage": "setup", "kind": "subscribed", "handle": 44}
+{"time": 1789483667.049097, "stage": "setup", "kind": "characteristic", "handle": 48, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483667.1690383, "stage": "setup", "kind": "descriptor", "handle": 49, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483667.235591, "stage": "setup", "kind": "descriptor", "handle": 50, "uuid": "UUID-16:2908 (Report Reference)", "value": "0301"}
+{"time": 1789483667.2889798, "stage": "setup", "kind": "read", "handle": 48, "value": "0000000000000000"}
+{"time": 1789483667.4089913, "stage": "setup", "kind": "subscribed", "handle": 48}
+{"time": 1789483667.4091933, "stage": "setup", "kind": "characteristic", "handle": 52, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483667.529018, "stage": "setup", "kind": "descriptor", "handle": 53, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483667.5891492, "stage": "setup", "kind": "descriptor", "handle": 54, "uuid": "UUID-16:2908 (Report Reference)", "value": "fc01"}
+{"time": 1789483667.6491554, "stage": "setup", "kind": "read", "handle": 52, "value": "fc01000000000000"}
+{"time": 1789483667.769036, "stage": "setup", "kind": "subscribed", "handle": 52}
+{"time": 1789483667.769228, "stage": "setup", "kind": "characteristic", "handle": 56, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483667.889112, "stage": "setup", "kind": "descriptor", "handle": 57, "uuid": "UUID-16:2908 (Report Reference)", "value": "fb02"}
+{"time": 1789483667.9490042, "stage": "setup", "kind": "read", "handle": 56, "value": ""}
+{"time": 1789483667.9491646, "stage": "setup", "kind": "characteristic", "handle": 59, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483668.069165, "stage": "setup", "kind": "descriptor", "handle": 60, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483668.1290176, "stage": "setup", "kind": "descriptor", "handle": 61, "uuid": "UUID-16:2908 (Report Reference)", "value": "f801"}
+{"time": 1789483668.1890385, "stage": "setup", "kind": "read", "handle": 59, "value": "f801000000000000"}
+{"time": 1789483668.309793, "stage": "setup", "kind": "subscribed", "handle": 59}
+{"time": 1789483668.3099642, "stage": "setup", "kind": "characteristic", "handle": 63, "uuid": "UUID-16:2A4D (Report)", "properties": 14}
+{"time": 1789483668.4290204, "stage": "setup", "kind": "descriptor", "handle": 64, "uuid": "UUID-16:2908 (Report Reference)", "value": "fa02"}
+{"time": 1789483668.488979, "stage": "setup", "kind": "read", "handle": 63, "value": ""}
+{"time": 1789483668.489128, "stage": "setup", "kind": "characteristic", "handle": 66, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483668.5489757, "stage": "setup", "kind": "descriptor", "handle": 67, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483668.5689845, "stage": "setup", "kind": "descriptor", "handle": 68, "uuid": "UUID-16:2908 (Report Reference)", "value": "f901"}
+{"time": 1789483668.589027, "stage": "setup", "kind": "read", "handle": 66, "value": "f901010000000000"}
+{"time": 1789483668.6289208, "stage": "setup", "kind": "subscribed", "handle": 66}
+{"time": 1789483668.6290765, "stage": "setup", "kind": "characteristic", "handle": 70, "uuid": "UUID-16:2A4D (Report)", "properties": 26}
+{"time": 1789483668.6690078, "stage": "setup", "kind": "descriptor", "handle": 71, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483668.6889448, "stage": "setup", "kind": "descriptor", "handle": 72, "uuid": "UUID-16:2908 (Report Reference)", "value": "0401"}
+{"time": 1789483668.7089877, "stage": "setup", "kind": "read", "handle": 70, "value": "0401010000000000"}
+{"time": 1789483668.7489052, "stage": "setup", "kind": "subscribed", "handle": 70}
+{"time": 1789483668.7490535, "stage": "setup", "kind": "service", "handle": 73, "uuid": "UUID-16:FD00"}
+{"time": 1789483668.788999, "stage": "setup", "kind": "characteristic", "handle": 75, "uuid": "UUID-16:FD01", "properties": 8}
+{"time": 1789483668.7891598, "stage": "setup", "kind": "characteristic", "handle": 77, "uuid": "UUID-16:FD02", "properties": 20}
+{"time": 1789483668.8289487, "stage": "setup", "kind": "descriptor", "handle": 78, "uuid": "UUID-16:2902 (Client Characteristic Configuration)", "value": "0000"}
+{"time": 1789483668.8290877, "stage": "setup", "kind": "listening", "seconds": 1800}
+{"time": 1789483690.390215, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483690.5101464, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483690.9101732, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000510000000000"}
+{"time": 1789483691.070087, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483691.370206, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000500000000000"}
+{"time": 1789483691.510169, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483691.8603294, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "00004f0000000000"}
+{"time": 1789483692.010173, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483692.4703755, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000280000000000"}
+{"time": 1789483692.610251, "stage": "group1_up_down_left_right_ok", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483713.0112047, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 44, "value": "00007f0000000000"}
+{"time": 1789483713.2312284, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483713.7812345, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "f600"}
+{"time": 1789483713.91104, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483715.2711487, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "2302"}
+{"time": 1789483715.4410586, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483715.9313092, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "ff03"}
+{"time": 1789483716.071142, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483716.657945, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 44, "value": "0000f30000000000"}
+{"time": 1789483716.8012502, "stage": "group2_mute_settings_home_local_back", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483735.6021433, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000800000000000"}
+{"time": 1789483735.7321384, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483736.2221599, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000810000000000"}
+{"time": 1789483736.3721228, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483736.9022021, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 48, "value": "9c00"}
+{"time": 1789483737.0420938, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483737.5721905, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 48, "value": "9d00"}
+{"time": 1789483737.7321348, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483738.7422674, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 59, "value": "8203010000000000000000000000000000000000"}
+{"time": 1789483738.8521223, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000ea0000000000"}
+{"time": 1789483738.9222512, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 59, "value": "8203000000000000000000000000000000000000"}
+{"time": 1789483739.0420773, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483741.8124464, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 59, "value": "8203010000000000000000000000000000000000"}
+{"time": 1789483741.90225, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000ea0000000000"}
+{"time": 1789483742.9425344, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 59, "value": "8203000000000000000000000000000000000000"}
+{"time": 1789483743.0022523, "stage": "group3_volup_voldown_chup_chdown_voice", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483774.7538397, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "00001e0000000000"}
+{"time": 1789483774.873818, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483775.1337595, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "00001f0000000000"}
+{"time": 1789483775.2537217, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483775.5637574, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000200000000000"}
+{"time": 1789483775.69376, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483776.0237246, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000210000000000"}
+{"time": 1789483776.1937728, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483776.4338949, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000220000000000"}
+{"time": 1789483776.573706, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483776.863832, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000230000000000"}
+{"time": 1789483777.0037832, "stage": "group4_digits1_6", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483796.5446267, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000240000000000"}
+{"time": 1789483796.7046285, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483796.9245553, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000250000000000"}
+{"time": 1789483797.074592, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483797.3946936, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000260000000000"}
+{"time": 1789483797.504604, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483797.9446409, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 48, "value": "0303"}
+{"time": 1789483798.064519, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483798.3746984, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000270000000000"}
+{"time": 1789483798.5246046, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483799.5347204, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 48, "value": "0403"}
+{"time": 1789483799.614561, "stage": "group5_7_8_9_star_0_hash", "kind": "notify", "handle": 48, "value": "0000"}
+{"time": 1789483823.345674, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483823.4856343, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483824.495784, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000660000000000"}
+{"time": 1789483824.585653, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483825.3957868, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483825.5757387, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483827.3258562, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000660000000000"}
+{"time": 1789483827.4558575, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483828.2359138, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483828.3657916, "stage": "group6_up_power_up_power_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483851.3069808, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483851.4367876, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483852.8769846, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483852.9768584, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483854.407056, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000520000000000"}
+{"time": 1789483854.5969508, "stage": "group7_up_tv_up_tv_up", "kind": "notify", "handle": 44, "value": "0000000000000000"}
+{"time": 1789483955.6328325, "stage": "group7_up_tv_up_tv_up", "kind": "disconnected", "reason": 22}
+{"time": 1789483955.6330826, "stage": "group7_up_tv_up_tv_up", "kind": "done"}
