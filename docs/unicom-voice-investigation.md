@@ -77,3 +77,42 @@
 本研究已迁移至独立仓库。实时探针为 [scripts/voice_probe.py](../scripts/voice_probe.py)，配置与一次性命令见 [setup.md](setup.md)。完整原始数据、CSV 和保留未知元数据的二进制重组视图见 [data/README.md](../data/README.md)。
 
 实验原始脚本与本地运行环境归档在忽略的 `.local/legacy-lab/`；本仓库新建 `.venv`，不依赖 CH582F 目录。
+
+## 已解决（2026-09-16）：音频编码为讯飞 ICO（"讯飞 16 倍压缩"）
+
+**结论：**FC 音频帧是讯飞 **ICO** 编解码器（即海信专利 CN110035308A 所列"讯飞 16 倍压缩算法"）：16 kHz 单声道 16-bit PCM，每 20 ms 一帧，压缩帧固定 **40 字节**（对应 640 字节 PCM，恰为 16:1）。解码后两段录音经 ASR 还原出与实测说话内容一致的语句，验证通过。
+
+### 定位路径
+
+1. [CMCC_PLUS issue #1](https://github.com/c07758942/CMCC_PLUS/issues/1)：普通安卓盒子安装讯飞语音助手插件（xiri.zip）后即可使用同类遥控器的语音功能，说明解码实现就在插件内。
+2. 下载 [xiri.zip](https://github.com/user-attachments/files/19075379/xiri.zip)（SHA-256 `1a9b9643fb37451df86a89f53e44386221452d638f08665137d139bcf2fecaba`），内含 `libicocodec.so`（SHA-256 `9d5dc444b2942c41be3e68ab5bdda744c9e60f61b9c176704015be6183eab2db`，JNI 类 `com/iflytek/xiri/tool/ICOCodec`）以及 `libsbc.so`、`libsiren7codec.so`、`libhbgdecode.so`、`libvitvvad.so`、`libaudio_util_lib.so` 等。厂商二进制不入库，本地放 `.local/xiri/`。
+3. 反汇编（capstone）确认 `libicocodec.so` 导出：`initCodec`（flags bit0=编码器/bit1=解码器）、`ICOCreate`、`ICOEncoder`、`ICODecoder`、`ICOReset`、`getEncodeFrameSize`（返回 0x28=40）、`getDecodeFrameSize`（返回 0x280=640）。`ICOCreate` 校验 config `{buf, size>4999, 采样率, u16 频宽}`，频宽 7000（0x1B58）时每帧 320 样本。库内含 `sDct_type_iv_s`、`sRmlt_coefs_to_samples` 等 Siren7/G.722.1（MLT）符号，说明 ICO 是 MLT 族的定制实现。
+4. `ICODecoder(state, in, in_halfwords, out, out_len*)` 入口先按置换表重排 u16，再对整帧逐 u16 XOR `0x416` 去混淆，然后进入 MLT 解码核心，输出 320 个样本且低 2 位清零。这解释了此前"载荷熵接近均匀、疑似加密"的观察。
+
+### 解码方法
+
+用 Unicorn (ARM/Thumb) 加载 `libicocodec.so`，桩掉 `memset/memcpy/_Znaj` 等少量 libc 依赖，依次调用 `initCodec(0,0,2)` → （每次按下语音键）`ICOReset` → 逐帧 `ICODecoder(state, frame, 20, out, &outlen)`（第三参数为半字数 20，即 40 字节）。完整实现见 [scripts/decode_ico_voice.py](../scripts/decode_ico_voice.py)，仅需 `unicorn`、`numpy`、`pyelftools`，不需要遥控器在线。
+
+### 验证（不只是"解码器没报错"）
+
+- 396/396 帧返回 0；输出 16 kHz PCM。
+- 每帧解码能量的对数包络与组内偏移 0..1 的明文 u16 能量头相关系数 **+0.965**（能量头与音频同源，独立于解码器实现）。
+- ASR（whisper-small，中文）：
+  - `fb_single_01_00`（实测说"一二三四五"）→ `1,2,3,4,5`；
+  - `fb_repeat_silence_speech`（实测先静音后说"现在测试联通遥控器"）→ `现在测试连通遥控器`（连通/联通为同音选字差异）。
+- 解码 WAV 在 `.local/decoded/`（`.wav` 不入库）。
+
+### 格式小结（与上文"FC 分包"表衔接）
+
+```text
+20 字节通知: [0..1] u16 组序号 | [2..3] u16 分片号 0/1/2 | [4..19] 16 字节分片内容
+48 字节组内容: [0..39]  ICO 帧（u16 置换 + XOR 0x416 混淆的 MLT 编码）
+              [40..41] u16 小端能量/VAD 指标（实测 0..29，静音段为 0）
+              [42..43] 组序号重复
+              [44..47] 重复偏移 28..31（发送侧拼接痕迹，无信息）
+20 ms 一组 = 16 kHz × 20 ms 的 16:1 压缩；两轮录音序号连续，但解码时每轮应 ICOReset。
+```
+
+### 对此前失败候选的回顾
+
+Opus（补 TOC）、iLBC、G.726、IMA ADPCM、CVSD、SBC/mSBC（无 58 字节同步特征）等候选全部不成立，与 ICO 的 MLT 编码特性一致（熵高、无字节同步字）。广电报批稿的 SBC 必选要求适用于接收端能力列表，本机实际发送 ICO，两者不矛盾。
