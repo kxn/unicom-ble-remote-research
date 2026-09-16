@@ -88,7 +88,19 @@ dongle 路径识别"这是不是讯飞遥控器设备"，对 hidraw 设备路径
 4. **口令核对**：要求 `响应[2..5] == "Trinity ISP 1.0 by Garfield 0804for Cicely  0423"[rnd[0..3]]`——密码表就是紧随特征串之后的这 48 字节 ASCII 字符串（"Trinity ISP 1.0"，作者署名 Garfield）。设备端固件必须内置同一字符串才能给出正确应答；
 5. 外层 `iflytekVerify` 每 60 s 轮询 `/sys/class/hidraw`，每设备最多验证 3 次（"dongle verify 3 times"）。
 
-**对本机的推论**：该指纹是 dongle USB HID 描述符里的 vendor 通道；若 CMCC 遥控器直连盒子内置蓝牙，其 HOGP 报表映射也须含同样的 31 字节 vendor 报表对才能被认出。本机联通遥控器的报表映射是 20 字节 FC/F8 扩展报表（FB/FA 在 Map 中未声明），**大概率不匹配此指纹**——即这套第三方栈可能根本认不出联通遥控器。此为可实测的差异化假说。
+**对本机的判定（已离线证实）**：遥控器直连盒子内置蓝牙时，内核 uhid 的描述符就来自其 HOGP Report Map。本机 Report Map 原始字节（169 字节，`data/raw/remote-session.jsonl` handle 0x2A 的 read）经特征扫描**不含该 31 字节指纹**——全 Map 只有键盘（ID 01）、Consumer（ID 03）、20 字节扩展 Input（ID 04/FC/F8）、1 字节 Input（ID F9），没有任何 vendor Output 项。即 `isIflytekDev` 必然返回"desc not same"：**这套第三方栈直连时认不出联通遥控器**。检查脚本见 [scripts/isiflytek_hid_check.py](../scripts/isiflytek_hid_check.py)。
+
+真机复核步骤（任一即可）：
+
+1. 复读 Report Map 对比：配对后读 HID service 的 Report Map 特征（0x2A4B），把 hex 交给
+   `python scripts/isiflytek_hid_check.py --hex <hex>`；预期输出 NOT FOUND（与 data/raw 存档一致则说明固件未变）。
+2. 在跑 svciflybl 的盒子上直连遥控器，`logcat`/串口过滤 `hid(`、`desc`、`verify`：预期出现
+   `hid(hidrawX) desc not same`，且插件收不到任何按键事件。
+3. 若手头有 CMCC dongle：把它插 PC/盒子，对 dongle 的 hidraw 节点跑
+   `python scripts/isiflytek_hid_check.py --hidraw /dev/hidrawX`；预期 FOUND（指纹本来就是 dongle 自己的 USB 描述符），
+   随后守护进程会发起 Trinity 挑战。此时再让 dongle 配对联通遥控器，即可验证 dongle↔遥控器空口是否互通——这是唯一可能让联通遥控器跑在该栈上的路径（需 dongle 侧接受新配对）。
+
+若第 1 步在某台联通遥控器上输出 FOUND，则说明存在与 CMCC 平台同固件的联通批次，值得重新评估直连路径。
 
 ## 3. ListenAI 主机端协议（`libremote-control-jni.so` 反汇编）
 
