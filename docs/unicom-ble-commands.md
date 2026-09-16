@@ -59,6 +59,37 @@ Java 层在盒子系统 APK 内（`libjiagu.so` 加固），插件只带了 nati
 
 > 2026-09-16 后续：第三方 Java 端已找到并反编译，其家族识别就是蓝牙设备名 `CMCC_Voice_Remote`、单家族、无分发逻辑，见第 4 节。
 
+### 2.2 `isIflytekDev` 的判断逻辑（libxdriver_xiri_d.so 反汇编）
+
+dongle 路径识别"这是不是讯飞遥控器设备"，对 hidraw 设备路径（`/dev/hidrawX`）做**两层判断**，设备名不参与（名字检查在插件 Java 层）：
+
+**第一层：HID 报表描述符静态指纹。** `open(O_RDWR|O_NONBLOCK)` 后依次 `HIDIOCGRRAWINFO`、`HIDIOCGRDESCSIZE`（描述符不足 30 字节 → 判负，日志 "size is small"）、`HIDIOCGRDESC`，然后在描述符字节里扫描 31 字节特征（要求锚点字节为 `0x15`，即 Usage Page/Logical Min 项）：
+
+```text
+15 00              Logical Minimum (0)
+26 FF 00           Logical Maximum (255)
+19 00              Usage Minimum (0)
+29 1F              Usage Maximum (0x1F)
+75 08              Report Size (8)
+95 1F              Report Count (31)
+91 00              Output (Data,Array,Abs)   ← 31 字节 vendor Output 报表
+15 00 26 FF 00     （同上一段重复）
+19 00 29 1F 75 08 95 1F
+81 00 C0           Input (Data,Array,Abs) + End Collection
+```
+
+即报表描述符里必须存在一对 **31 字节 vendor Output + 31 字节 Input 报表**（"smart_ctrl" 通道）。不匹配 → "hid(%s) desc not same"。
+
+**第二层：动态口令挑战。** 指纹命中后（"desc same, verify ->"）：
+
+1. 生成 4 个随机数 `rnd[i] = rand() % 48`；
+2. 写 32 字节命令 `{01 08 rnd[0..3] crc16(前6字节) 补零}`，非阻塞写，EAGAIN 时 epoll 等 50 ms；
+3. 读 32 字节响应（"dongle feedback"），`crc16(响应前8字节) == 0` 否则 "verifyDongle, crc error"；
+4. **口令核对**：要求 `响应[2..5] == "Trinity ISP 1.0 by Garfield 0804for Cicely  0423"[rnd[0..3]]`——密码表就是紧随特征串之后的这 48 字节 ASCII 字符串（"Trinity ISP 1.0"，作者署名 Garfield）。设备端固件必须内置同一字符串才能给出正确应答；
+5. 外层 `iflytekVerify` 每 60 s 轮询 `/sys/class/hidraw`，每设备最多验证 3 次（"dongle verify 3 times"）。
+
+**对本机的推论**：该指纹是 dongle USB HID 描述符里的 vendor 通道；若 CMCC 遥控器直连盒子内置蓝牙，其 HOGP 报表映射也须含同样的 31 字节 vendor 报表对才能被认出。本机联通遥控器的报表映射是 20 字节 FC/F8 扩展报表（FB/FA 在 Map 中未声明），**大概率不匹配此指纹**——即这套第三方栈可能根本认不出联通遥控器。此为可实测的差异化假说。
+
 ## 3. ListenAI 主机端协议（`libremote-control-jni.so` 反汇编）
 
 JNI 接口五个：`createDecoder` / `decode` / `destroyDecoder` / `unpackChipId` / `authorize`。
