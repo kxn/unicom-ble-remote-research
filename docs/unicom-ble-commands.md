@@ -115,6 +115,24 @@ JNI 接口五个：`createDecoder` / `decode` / `destroyDecoder` / `unpackChipId
 
 与直连 BLE 流程逐拍对上：按键事件 → 主机发开始命令 → ICO 流 → 松开事件 → 主机发停止命令。可见 dongle 方案里启停命令同样由宿主应用发出，dongle 固件只做转发与重组。
 
+### 4.1 FD00/FD02 与 dongle 路径的关系（不是"报文格式被改"）
+
+FD00/FD02 来自**遥控器固件自身**的 GATT（直连抓包即可见），不在任何主机侧代码里：`libiflyblesvc` 全库只有 `/sys/class/hidraw`、`/dev/%s`，零 Bluetooth/GATT/FD00 引用；插件同样没有。dongle 路径看不到 FD00 的原因是**观测面不同**，不是空口协议变更：
+
+```text
+空口（遥控器 ↔ 盒子）:  标准 BLE HID（F8/FC 报表、写 FB 启停，与直连抓包一致——待证）
+内核:                  BLE HID → uhid → /dev/hidrawN；或 USB dongle → /dev/hidrawN
+守护进程 svciflybl:    读 hidraw，重新封装为 F2E0D1C5 socket 帧
+宿主 App:              socket → ICO 解码 → PCM → 夏杰语音
+GATT 层（含 FD00）:    被 dongle 固件 / 系统 BT 栈消化，宿主永远不可见
+```
+
+即 hidraw/socket 上看到的格式差异（62 字节帧、20 字节事件、18 字节命令）是**接收侧本地封装**，不能当作 CMCC 改过空口报文的证据。
+
+一个架构细节：插件同时监听 `USB_DEVICE_ATTACHED` 和 `android.bluetooth.input.profile.action.CONNECTION_STATE_CHANGED`、`ACL_CONNECTED`——CMCC 盒子两种接法都支持：外接 dongle，或遥控器**直连盒子内置蓝牙**（BLE HID 经内核同样落成 hidraw 节点）。`isIflytekDev` 逐个 hidraw 设备核对描述符，就是在两种来源里认遥控器。
+
+FD00 的服务对象因此有两种假说：(a) 原厂**直连型**宿主（不走 dongle 的盒子 App）用它做初始化/鉴权——FD02 那条 10 字节消息属于此类未解项；(b) dongle 固件内部消费、无需转发。已实测语音完全不依赖 FD00 交互，它至少是可选的。
+
 ### 对本机（联通）的参照价值
 
 - 同源印证：移动 CMCC 与联通遥控器同为 ICO 音频、同启停流程，dongle hidraw 报文格式（尤其 62 字节帧的 22 字节头）值得日后抓 USB 时核对。
