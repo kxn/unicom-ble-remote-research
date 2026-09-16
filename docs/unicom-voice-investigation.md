@@ -93,6 +93,8 @@
 
 用 Unicorn (ARM/Thumb) 加载 `libicocodec.so`，桩掉 `memset/memcpy/_Znaj` 等少量 libc 依赖，依次调用 `initCodec(0,0,2)` → （每次按下语音键）`ICOReset` → 逐帧 `ICODecoder(state, frame, 20, out, &outlen)`（第三参数为半字数 20，即 40 字节）。完整实现见 [scripts/decode_ico_voice.py](../scripts/decode_ico_voice.py)，仅需 `unicorn`、`numpy`、`pyelftools`，不需要遥控器在线。
 
+**纯 C 实现**：确认 MLT 核心就是标准 G.722.1 后，把 pjproject 打包的 G.722.1 定点参考解码器直接编译进来（`fetch_reference.py` 下载并 SHA-256 锁定），外面套上逆向出的厂商封装（u16 置换 + XOR 0x0416 去混淆、输出低 2 位清零、每次录音重置四种子 LCG）。输出与上述 Unicorn 模拟**逐字节相同**，见 [scripts/ico_decoder/](../scripts/ico_decoder/)，可脱离本仓库移植。
+
 ### 验证（不只是"解码器没报错"）
 
 - 396/396 帧返回 0；输出 16 kHz PCM。

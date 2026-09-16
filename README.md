@@ -15,7 +15,7 @@
 | 启动实验 | 按下语音键后，向 HID FB（ATT value handle `0x0038`）写单字节 `01`，FC（`0x0034`）开始连续传输；两次成功 |
 | 已保存数据 | 1188 个 FC 通知，396 组，每组 3 个 20 字节通知；每 20 ms 一组，序号连续 |
 | 停止 | 松手时写 `00` 后数据流停止；尚未隔离验证"仅写 00"和"仅松手"的各自作用 |
-| 解码 | **已完成**。音频为讯飞 ICO 编解码器（"讯飞16倍压缩"）：16 kHz 单声道，40 字节/20 ms，16:1。两段录音 ASR 还原出与实测一致的语句，见 [语音调查](docs/unicom-voice-investigation.md) |
+| 解码 | **已完成**。音频为讯飞 ICO 编解码器（"讯飞16倍压缩"）：16 kHz 单声道，40 字节/20 ms，16:1。两段录音 ASR 还原出与实测一致的语句；另有不依赖厂商库的 [纯 C 解码器](scripts/ico_decoder/README.md)，与厂商实现逐字节一致，见 [语音调查](docs/unicom-voice-investigation.md) |
 
 范围仅限这只样机。不能凭“联通/移动/电信遥控器”外观推广为通用协议；当前也不能给芯片厂家或音频编码下定论。
 
@@ -57,6 +57,21 @@ python scripts/analyze_capture.py docs/unicom-voice-evidence.jsonl
 ```
 
 输出 WAV 到 `.local/decoded/`。来源与哈希见 [语音调查](docs/unicom-voice-investigation.md)。
+
+## 纯 C 解码器（不依赖厂商库）
+
+`scripts/ico_decoder/` 把 pjproject 打包的 G.722.1 定点参考实现编译进来，叠加逆向出的
+u16 置换 + XOR `0x0416` 去混淆层；解码结果与 `libicocodec.so` 模拟逐字节相同，核心
+约 40 行，方便移植：
+
+```powershell
+cd scripts/ico_decoder
+python fetch_reference.py     # 下载 G.722.1 参考源码并 SHA-256 校验
+cc -I pj_shim -I . -I g7221/common -I g7221/decode -o ico_decoder g7221/common/basic_op.c g7221/common/common.c g7221/common/huff_tab.c g7221/common/tables.c g7221/decode/coef2sam.c g7221/decode/dct4_s.c g7221/decode/decoder.c ico_decoder.c
+./ico_decoder ../../data/derived/groups.jsonl .local/decoded
+```
+
+构建、验证与移植说明见 [scripts/ico_decoder/README.md](scripts/ico_decoder/README.md)。
 
 ## 实时实验入口
 
