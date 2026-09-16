@@ -44,6 +44,19 @@ Java 层在盒子系统 APK 内（`libjiagu.so` 加固），插件只带了 nati
 
 **关键结论：盒子的 GATT 链路终结在 USB dongle 固件里**（Android 侧只见 `/sys/class/hidraw` 设备），所以这个 zip 里没有任何 GATT 层写命令——找不到 FD00 相关内容不是遗漏，是它本来就不在那里。想要 GATT 写命令，只能问 dongle 固件或盒子 APK 的 Java 层，或对遥控器做受控实验。
 
+### 2.1 家族识别与分发逻辑不在这份 zip 里
+
+"主机如何判断遥控器属于哪个家族、该调哪套解码/处理代码"——这个分发决策从这份 zip 里**看不出来**，依据：
+
+- zip 只有 native 库，没有 dex/APK；分发决策属于 Java 层，而盒子系统 APK 用 `libjiagu.so` 加固，不在插件包内。
+- 对全部 43 个 .so 扫描家族/UUID/设备类型相关字符串（`FD00`、`AB5E`、device type、厂商号等）：各解码库内**没有任何 BLE 识别逻辑**，它们只是"被选中的执行者"，不是"选择者"。
+- zip 内仅有的三处"识别/校验"痕迹都在 dongle 路径，不是 BLE 家族分发：
+  1. `libxdriver_xiri_d.so` 的 `isIflytekDev()`：按 hidraw 描述符认 USB dongle 是不是讯飞设备；
+  2. `libsbc.so`（实为 `com.freqchip.audiolib`，FreqChip 方案）的 `apkSystemIDCrc`/`driverSystemIDCrc`：APK 与 dongle 固件的 systemID CRC 互校，防错配，仍是 USB 侧；
+  3. ListenAI `authorize`：芯片 ID 密文验真，验过即"正品 ListenAI 遥控器"，兼有家族确认作用（见第 3 节）。
+
+因此分发逻辑只可能在这两处：**盒子系统 APK 的 Java 层**（加固，需从实机 dump）或 **dongle 固件**。生态内已知的可用识别信号（若自行实现主机端可参考）：服务 UUID 组合（FD00 vs AB5E ATVV vs …0003FD RTK）、DIS 软件标识串（本机 `XFRSD0D_...`，XF 前缀疑似讯飞固件）、广播厂商自定义数据（海信专利 CN110035308A 提出的"配对阶段按广播信息选主机解码器"即此类机制）、家族特有握手（如 ListenAI 的 FD00 挑战包）。本机这些信号中，除服务列表和 DIS 外均未系统采集。
+
 ## 3. ListenAI 主机端协议（`libremote-control-jni.so` 反汇编）
 
 JNI 接口五个：`createDecoder` / `decode` / `destroyDecoder` / `unpackChipId` / `authorize`。
