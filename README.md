@@ -21,6 +21,8 @@
 
 ## 目前卡在哪里
 
+连续录音的新边界：不刷新时约 20.7 秒自行结束；每 5 秒重发 FB=`01` 后通过 40 秒录音，但一次长录音在 59.84 秒由遥控器主动断连。尚未验证超过 60 秒，见 [对照实验及原始数据](docs/long-recording.md)。
+
 1. **最小握手部分已确认。** 新连接未写 FA，使用 FB 成功完成两段实时录音并经用户试听确认正常；FD02 是否必须订阅仍需隔离，见 [实机验证](docs/live-voice.md)。
 2. **停止条件尚需隔离。** 尚未在持续按住时单独发送 `00`，无法区分"松手自行停止"和"`00` 命令停止"。
 3. ~~编码未知。~~ 已解决：讯飞 ICO，40 字节/20 ms，16 kHz 单声道。ICODecoder 含 u16 置换 + XOR `0x416` 去混淆，详见 [语音调查](docs/unicom-voice-investigation.md)。
@@ -28,6 +30,7 @@
 
 ## 资料导航
 
+- [连续录音时限与保活实验](docs/long-recording.md)
 - [Windows / macOS HID 兼容性与厂商意图的证据边界](docs/hid-host-compatibility.md)
 - [讯飞 / Realtek 编码与报文资料补充（2026-09-16）](docs/iflytek-realtek-sources.md)
 - [详细语音进展、失败候选、广电文档对照](docs/unicom-voice-investigation.md)

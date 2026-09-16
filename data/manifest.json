@@ -70,6 +70,26 @@
       "path": "docs/unicom-voice-evidence.jsonl",
       "bytes": 175894,
       "sha256": "5416067b30cc68a05ee5d01054b53c4146e142144067547483a7d876845e7a47"
+    },
+    {
+      "path": "data/raw/long-voice-standard.jsonl",
+      "bytes": 448693,
+      "sha256": "5764b8eed7b5d62bf9e903bf45cae58ebe3e3a48cc7ba98f7399a45407b67a8b"
+    },
+    {
+      "path": "data/raw/long-voice-ignore-up.jsonl",
+      "bytes": 451825,
+      "sha256": "b2c2248d26f5559b804a2e574c8cadd19cf003d3959cc8e42c1c46142a41554a"
+    },
+    {
+      "path": "data/raw/long-voice-refresh-start.jsonl",
+      "bytes": 862045,
+      "sha256": "ee0de96d61411ee5e87579676fe2c13b5003a0535b5b6927b208a99a933c832c"
+    },
+    {
+      "path": "data/raw/long-voice-refresh-music.jsonl",
+      "bytes": 1284638,
+      "sha256": "32bb911aa3c84db406ac27ffec718efabf8b0e331213b8a83d4382b7b47a77b1"
     }
   ]
 }

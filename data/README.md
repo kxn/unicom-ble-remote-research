@@ -17,6 +17,10 @@
 | `raw/keymap-session.jsonl` | 逐键测试完整采集日志，包含阶段标签 |
 | `raw/voice-1789484579.jsonl` | 全部通知订阅的被动基线，FD02 初始化消息以及两次语音按键；该会话被人工中断，日志没有完整结束事件 |
 | `raw/voice-1789484721.jsonl` | FA 对照、首次 FB 启动、重复 FB 启动的完整会话；包含最终断开 |
+| `raw/long-voice-standard.jsonl` | 新连接复用绑定，主机上限 120 秒；遥控器约 20.7 秒上报松键，主机随即停止 |
+| `raw/long-voice-ignore-up.jsonl` | 主机忽略提前松键报告，等待至 90 秒；仍只收到 20.7 秒音频 |
+| `raw/long-voice-refresh-start.jsonl` | 每 5 秒重发已知 FB=01，持续收到 40 秒音频，主机在 40 秒主动停止 |
+| `raw/long-voice-refresh-music.jsonl` | 音乐声源、每 5 秒重发 FB=01、主机上限 100 秒；59.84 秒音频后远端以 0x13 断连 |
 
 这些文件按原始字节复制保存，未重排事件或删改载荷。`docs/*-evidence.jsonl` 是此前整理的事件视图，原始完整日志以这里的 `raw/` 为准。JSONL 没有 HCI 无线层原始帧，只包含实验脚本记录的 ATT/GATT 应用事件；不能用于分析未记录的链路层重传。
 
