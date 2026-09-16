@@ -97,6 +97,7 @@ static void ico_decode_frame(IcoState *st, const uint8_t *frame, Word16 *pcm)
 }
 
 /* ---------------- minimal WAV writer ---------------- */
+#ifndef ICO_LIBRARY
 static void write_wav(const char *path, const int16_t *samples, size_t n)
 {
     FILE *f = fopen(path, "wb");
@@ -210,3 +211,4 @@ int main(int argc, char **argv)
     free(buf);
     return 0;
 }
+#endif

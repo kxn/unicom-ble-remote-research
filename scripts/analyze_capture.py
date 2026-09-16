@@ -1,4 +1,4 @@
-"""Reassemble observed FC fragments without claiming an audio payload format."""
+"""Reassemble FC fragments, preserving the ICO frame and observed trailer."""
 import argparse
 import collections
 import json
@@ -44,7 +44,7 @@ def analyze(path):
         'tail_data_matches':sum(g['tail_repeats_fragment1'] for g in complete),
         'tail_sequence_matches':sum(g['tail_repeats_sequence'] for g in complete),
         'groups_by_experiment':dict(collections.Counter(g['label'] for g in groups)),
-        'warning':'Joined content includes unknown metadata; it is not a verified audio bitstream.',
+        'warning':'Joined content is 48 bytes: use only the first 40 bytes as an ICO frame; preserve the 8-byte trailer separately.',
     }
     return summary,groups
 
