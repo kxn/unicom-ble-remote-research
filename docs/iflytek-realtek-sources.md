@@ -4,6 +4,8 @@
 
 检索与核对日期：2026-09-16。本文区分公开方案、样机实测和待验证推断；尚未找到与本机 FC 报文逐字节对应的源码，尚未解出可懂语音。
 
+> 2026-09-16 补充：第 4 节遗留的 F8/FB/FC 与 FD00/FD02 指令对应关系已梳理，见[指令面](unicom-ble-commands.md)。
+
 ## 1. Realtek：交互流程与编码是两个配置项
 
 来源：[Realtek S-Bee2 RCU Application Design SPEC](https://www.realmcu.com/img/ipb/en_637441010047947270.pdf)，第 13.4–13.5 节、文档页 55–61。

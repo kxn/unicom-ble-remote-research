@@ -1,6 +1,7 @@
 # 联通 BLE 语音遥控器：Windows 描述检查（历史记录）
 
 > 最新状态：已通过 FB 写入启动 FC 连续数据，编码尚未确定。见 [语音调查](unicom-voice-investigation.md)。以下初始缓存读取和早期无音频结论按实验阶段保留。
+> 2026-09-16 补充：BLE 控制指令面（按键报表、FB 语音启停、FD00/FD02、厂商库中的 ListenAI 鉴权协议）已单独梳理，见 [指令面](unicom-ble-commands.md)。
 
 > 更新：已通过外接 USB 蓝牙棒 + Bumble 完成实时连接、配对、加密、HID Report Map 读取及按键通知捕获。下文最初的 Windows 访问限制仍属实，但已不再阻塞独立诊断。实测结果见文末。
 
