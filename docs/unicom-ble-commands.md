@@ -57,6 +57,8 @@ Java 层在盒子系统 APK 内（`libjiagu.so` 加固），插件只带了 nati
 
 因此分发逻辑只可能在这两处：**盒子系统 APK 的 Java 层**（加固，需从实机 dump）或 **dongle 固件**。生态内已知的可用识别信号（若自行实现主机端可参考）：服务 UUID 组合（FD00 vs AB5E ATVV vs …0003FD RTK）、DIS 软件标识串（本机 `XFRSD0D_...`，XF 前缀疑似讯飞固件）、广播厂商自定义数据（海信专利 CN110035308A 提出的"配对阶段按广播信息选主机解码器"即此类机制）、家族特有握手（如 ListenAI 的 FD00 挑战包）。本机这些信号中，除服务列表和 DIS 外均未系统采集。
 
+> 2026-09-16 后续：第三方 Java 端已找到并反编译，其家族识别就是蓝牙设备名 `CMCC_Voice_Remote`、单家族、无分发逻辑，见第 4 节。
+
 ## 3. ListenAI 主机端协议（`libremote-control-jni.so` 反汇编）
 
 JNI 接口五个：`createDecoder` / `decode` / `destroyDecoder` / `unpackChipId` / `authorize`。
@@ -91,7 +93,35 @@ JNI 接口五个：`createDecoder` / `decode` / `destroyDecoder` / `unpackChipId
 
 本机 FD00/FD02 上只见过 10 字节通知，从未捕获 40 字节挑战包。本机音频=ICO 与 ListenAI 方案吻合，但 FD00 语义是否就是上述鉴权通道、10 字节消息是什么，需要长时间抓包或受控实验确认。
 
-## 4. 尚未解决的指令与验证途径
+## 4. 第三方 Java 主机端（CMCC_PLUS 仓库）
+
+来源：[c07758942/CMCC_PLUS](https://github.com/c07758942/CMCC_PLUS) 内的 `cmcc语音遥控器助手_v1002.apk`（包名 `com.android.cmremote`），基于 [SHARJECK/VoicePlus](https://github.com/SHARJECK/VoicePlus) SDK（那只是 IPC 桥：解码后的 PCM 16 kHz/16-bit 经 `AudioTransfer` 发给夏杰语音 `com.peasun.aispeech`）。以下经 jadx 反编译核对。
+
+**家族识别：只支持一种遥控器**——蓝牙设备名包含 `CMCC_Voice_Remote`（监听 HID profile 连接状态广播，连上时自动重连 socket）。整个 dex 没有任何其他家族的调用（freqchip/belon/jinju/hbgic/listenai 均无，字符串 grep 命中的是 belong 之类误匹配），也没有 authorize/chipId 调用。上一节的"多家族分发"在第三方实现里不存在——那仍是原厂盒子 Java 层的事。
+
+**它不直接做 BLE**：全部业务代码没有任何 `BluetoothGatt` 调用，遥控器语音经 `svciflybl` 守护进程（即 xiri.zip 的 `libiflyblesvc`，读 hidraw）的 unix socket `/tmp/iflytek_ble_8431060cd56c47228782aa2e772a31b2` 获取。`onCreate` 无条件连 socket；名字检查只影响"遥控器连接事件触发重连"这一条路径。
+
+### dongle socket 协议（本节新提取）
+
+所有包共享 magic `F2 E0 D1 C5`：
+
+| 方向 | 长度 | 布局（magic 后） | 含义 |
+| --- | --- | --- | --- |
+| daemon→app | 20 | [4..17] 未知，[18]=`03`，[19]=`01`/`00` | 语音键按下/松开事件 |
+| app→daemon | 18 | u32 0 ‖ u32 6 ‖ u32 4 ‖ u16 1 | 语音开始（= 直连方案写 FB `01` 的等价物） |
+| app→daemon | 18 | u32 0 ‖ u32 7 ‖ u32 4 ‖ u16 2 | 语音停止（= 写 FB `00`） |
+| app→daemon | 18 | u32 0..3 ‖ u32 4 ‖ u16 {2,0x11,0x12,0x11} | socket 建立时连发 4 条订阅命令 |
+| daemon→app | 62 | [22..61] = 40 字节 ICO 帧 | 语音数据；seq/frag 重组已由 dongle/daemon 完成 |
+
+与直连 BLE 流程逐拍对上：按键事件 → 主机发开始命令 → ICO 流 → 松开事件 → 主机发停止命令。可见 dongle 方案里启停命令同样由宿主应用发出，dongle 固件只做转发与重组。
+
+### 对本机（联通）的参照价值
+
+- 同源印证：移动 CMCC 与联通遥控器同为 ICO 音频、同启停流程，dongle hidraw 报文格式（尤其 62 字节帧的 22 字节头）值得日后抓 USB 时核对。
+- 名字门为 `CMCC_Voice_Remote`；本机 BLE 名称未记录。插件对联通遥控器未必自动触发，但 `onCreate` 无条件连 socket，直接跑也可能工作，待实测。
+- 整个 dongle 栈（守护进程 + 宿主）没有 FD00/FD02 概念——FD00 的语义只存在于直连 BLE 方案（或被 dongle 固件内部消化），第三方宿主根本不接触。
+
+## 5. 尚未解决的指令与验证途径
 
 - FD02 是否接受主机写入（启动应答？查询？）：无源码依据，不做盲写，仅在受控实验里低风险探测；相关实验设计见[下一步实验](next-experiments.md)。
 - 长连接抓包确认 FD02 是否周期性/事件性推送 40 字节鉴权挑战。
