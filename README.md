@@ -28,6 +28,7 @@
 
 ## 资料导航
 
+- [Windows / macOS HID 兼容性与厂商意图的证据边界](docs/hid-host-compatibility.md)
 - [讯飞 / Realtek 编码与报文资料补充（2026-09-16）](docs/iflytek-realtek-sources.md)
 - [详细语音进展、失败候选、广电文档对照](docs/unicom-voice-investigation.md)
 - [下一步实验顺序](docs/next-experiments.md)
